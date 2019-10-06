@@ -5,6 +5,7 @@
   <body>
     
     <div id="app">
+      <button @click="message"> できた </button>
       <svg width=800 height=800>
 	<g v-for="(Y,i) in conf">
 	  <rect v-for="(x,j) in Y"
@@ -23,7 +24,7 @@
 	  </rect>	 
 	</g>
 	<text x="220,270,320,370,420" y="170">24442</text>
-	<text x="120,170,170,170,170,170" y="220,220,270,320,370,420">115531</text>	
+	<text x="120,170,170,170,170,170" y="220,220,270,320,370,420">115531</text>
       </svg>
     </div>
 
@@ -31,6 +32,3 @@
     
   </body>
 </html>
-
-<img id="img" src="hearts.png">
-<canvas id="canvas"></canvas>
