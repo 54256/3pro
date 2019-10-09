@@ -5,8 +5,7 @@
   <body>
     
     <div id="app">
-      <button @click="message"> できた </button>
-      <svg width=800 height=800>
+      <svg width=800 height=600>
 	<g v-for="(Y,i) in conf">
 	  <rect v-for="(x,j) in Y"
 		@click="change(i,j)"
@@ -23,9 +22,12 @@
 	    v-for="p in labelBoxY" x=100 :y="p*50+200" width=100 height=50 fill="yellow" stroke="black">
 	  </rect>	 
 	</g>
-	<text x="220,270,320,370,420" y="170">24442</text>
-	<text x="120,170,170,170,170,170" y="220,220,270,320,370,420">115531</text>
+	<g v-for="s,i in verticalsum" :transform="trans(i)"><text v-for="p,j in s" :y="-j*20">{{p}}</text></g>
+	<g v-for="s,i in horizontalsum" :transform="transY(i)"><text v-for="p,j in s" :x="-j*20">{{p}}</text></g>
       </svg>
+      <div>
+	<button @click="message"> できた </button>
+      </div>
     </div>
 
     <script src="3pro.js"></script>
